@@ -1,11 +1,29 @@
-<%# add navigation links to this file %>
-<% if user_signed_in? %>
-  <li><%= link_to 'Edit account', edit_user_registration_path %></li>
-  <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
-<% else %>
-  <li><%= link_to 'Sign in', new_user_session_path %></li>
-  <li><%= link_to 'Sign up', new_user_registration_path %></li>
-<% end %>
-<% if user_signed_in? %>
-  <li><%= link_to 'Users', users_path %></li>
-<% end %>
+<nav class="navbar navbar-default">
+  <div class="navbar-header">
+    <div class="navbar-brand">
+      <%= link_to "navbar-brand (link)", "#" %>
+    </div>
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+        data-target="#bs-example-navbar-collapse-1">
+  </div>
+
+
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav nav-pills">
+    <% if user_signed_in? %>
+      <li><%= link_to 'Edit account', edit_user_registration_path %></li>
+      <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
+    <% else %>
+      <li><%= link_to 'Sign in', new_user_session_path %></li>
+      <li><%= link_to 'Sign up', new_user_registration_path %></li>
+    <% end %>
+    <% if user_signed_in? %>
+      <li><%= link_to 'Users', users_path %></li>
+    <% end %>
+      <li><%= link_to "nav nav-pills", "#" %></li>
+      <li><%= link_to "nav nav-pills", "#" %></li>
+      <li><%= link_to "nav nav-pills", "#" %></li>
+      <li><%= link_to "nav nav-pills", "#" %></li>
+    </ul>
+  </div>
+</nav>
